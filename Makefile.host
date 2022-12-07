@@ -1,0 +1,11 @@
+CC = gcc
+CFLAGS = -Wall -pthread -g
+
+OBJS = wake.o stats.o
+
+all: adrestia
+adrestia: adrestia.c $(OBJS)
+	$(CC) $(CFLAGS) $^ -o $@_host
+
+clean: 
+	$(RM) adrestia $(OBJS)
